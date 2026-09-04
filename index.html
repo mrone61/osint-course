@@ -10,10 +10,7 @@
 
 .page{display:none}.page.active{display:block}
 
-.topbar{position:sticky;top:0;z-index:30;height:72px;border-bottom:1px solid var(--line);background:#000;display:flex;align-items:center;justify-content:flex-end;padding:0 max(22px,calc((100vw - var(--max))/2));}
-.topbar nav{display:flex;gap:26px}
-.topbar nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:.18em;cursor:pointer}
-.topbar nav a:hover{color:var(--green)}
+.topbar{position:sticky;top:0;z-index:30;height:72px;border-bottom:1px solid var(--line);background:#000}
 
 .hero{min-height:720px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.1fr.9fr;align-items:center;gap:50px;padding:90px 28px;background:var(--bg)}
 .hero h1{font-size:clamp(64px,9vw,118px);line-height:0.85;margin:25px 0 18px;font-weight:400;color:#fff;letter-spacing:-0.04em}
@@ -66,7 +63,6 @@ h2{font-size:clamp(35px,5vw,64px);line-height:1.1;margin:16px 0 25px;font-weight
 footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#777;font-size:9px;letter-spacing:.15em;background:var(--bg)}
 
 @media(max-width:850px){
-.topbar{justify-content:center}
 .hero{grid-template-columns:1fr;padding-top:75px}
 .module-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -76,12 +72,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
 
 <!-- HALAMAN 1: LANDING -->
 <div id="page1" class="page active">
-  <header class="topbar">
-    <nav>
-      <a onclick="showPage('page1')">HOME</a>
-      <a onclick="showPage('page2')">DAFTAR</a>
-    </nav>
-  </header>
+  <header class="topbar"></header>
 
   <main>
     <section class="hero">
@@ -132,9 +123,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
 
 <!-- HALAMAN 2: FORM DAFTAR -->
 <div id="page2" class="page">
-  <header class="topbar">
-    <nav><a onclick="showPage('page1')">← KEMBALI</a></nav>
-  </header>
+  <header class="topbar"></header>
   
   <div class="register-wrap">
     <div class="register-card">
