@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="OSINT — Open Source Intelligence. Kursus offline Cyber Security dengan fokus praktik langsung di lab, legal dan etis." />
+  <title>OSINT • Open Source Intelligence — Cyber Army Papua</title>
+  <style>
+:root{--bg:#050806;--panel:#0a100d;--line:#294c36;--green:#a9ff3f;--green2:#61d92f;--text:#e9efe8;--muted:#8d9b90;--red:#ff5c5c;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 75% 12%,#122217 0,#050806 36%,#030403 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;overflow-x:hidden}.scanlines{position:fixed;inset:0;pointer-events:none;z-index:20;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);mix-blend-mode:overlay}.noise{position:fixed;inset:0;pointer-events:none;z-index:19;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}.topbar{position:sticky;top:0;z-index:30;height:72px;border-bottom:1px solid rgba(169,255,63,.18);background:rgba(4,8,6,.82);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100vw - var(--max))/2));}.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none}.brand-mark{width:38px;height:38px;border:1px solid var(--green);display:grid;place-items:center;color:var(--green);font-weight:900;font-size:12px;clip-path:polygon(15% 0,85% 0,100% 15%,100% 85%,85% 100%,15% 100%,0 85%,0 15%)}.brand b{display:block;font-size:12px;letter-spacing:.16em}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:.16em;margin-top:3px}.topbar nav{display:flex;gap:26px}.topbar nav a{color:#b8c2ba;text-decoration:none;font-size:11px;letter-spacing:.18em}.topbar nav a:hover{color:var(--green)}.menu-btn{display:none;background:none;color:var(--green);border:0;font-size:22px}.hero{min-height:720px;max-width:var(--max);margin:auto;position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px;padding:90px 28px}.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(169,255,63,.12);pointer-events:none}.hero:before{inset:35px 15px 35px 15px}.hero:after{width:260px;height:260px;right:-70px;top:100px;border-radius:50%;box-shadow:0 0 80px rgba(97,217,47,.08)}.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(169,255,63,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(169,255,63,.045) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to right,transparent,black 20%,black 80%,transparent);opacity:.55}.hero-copy,.tactical-panel{position:relative;z-index:2}.eyebrow,.section-label{font-size:10px;letter-spacing:.2em;color:var(--green);font-weight:800}.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);margin-right:7px}.hero h1{font-size:clamp(64px,9vw,118px);line-height:.78;margin:25px 0 18px;letter-spacing:-.07em;font-weight:950;color:#f3f7f2}.hero h1 span{display:block;color:var(--green);font-size:.37em;letter-spacing:.02em;line-height:.95;margin-top:17px}.tagline{font-weight:900;letter-spacing:.22em;font-size:14px}.lead{max-width:660px;color:#aeb9b0;line-height:1.75;font-size:15px}.hero-actions{display:flex;gap:12px;margin:30px 0}.btn{display:inline-block;padding:14px 18px;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:.12em;border:1px solid var(--green)}.primary{background:var(--green);color:#071006}.ghost{color:var(--green);background:rgba(169,255,63,.03)}.hero-meta{display:flex;gap:26px;color:#768479;font-size:9px;letter-spacing:.12em}.hero-meta b{color:#dbe8da}.tactical-panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(12,22,15,.95),rgba(5,9,7,.9));padding:18px;box-shadow:0 0 60px rgba(0,0,0,.4)}.panel-head{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#a7b5a9;border-bottom:1px solid var(--line);padding-bottom:12px}.panel-head i{color:var(--green);font-style:normal}.radar{width:290px;height:290px;max-width:80vw;margin:35px auto 18px;border:1px solid #385f43;border-radius:50%;position:relative;background:radial-gradient(circle,transparent 0 25%,rgba(97,217,47,.06) 26% 26.5%,transparent 27% 49%,rgba(97,217,47,.06) 50% 50.5%,transparent 51% 74%,rgba(97,217,47,.06) 75% 75.5%,transparent 76%),linear-gradient(90deg,transparent 49.7%,rgba(169,255,63,.2) 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,rgba(169,255,63,.2) 50%,transparent 50.3%);overflow:hidden}.radar:after{content:"";position:absolute;inset:15%;border:1px dashed rgba(169,255,63,.18);border-radius:50%}.radar-sweep{position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0 315deg,rgba(169,255,63,.25) 350deg,transparent 360deg);animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.radar-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}.d1{left:62%;top:32%}.d2{left:32%;top:62%}.d3{left:70%;top:70%}.coordinates{text-align:center;color:#6e7e72;font-size:9px;letter-spacing:.16em;line-height:1.8}.coordinates b{color:#b8c8ba}.data-lines{margin-top:20px;border-top:1px solid var(--line);padding-top:15px;display:grid;gap:10px;font:9px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#718074}.data-lines b{color:var(--green)}.section{max-width:var(--max);margin:auto;padding:100px 28px;border-top:1px solid rgba(169,255,63,.1)}h2{font-size:clamp(35px,5vw,64px);line-height:.95;letter-spacing:-.04em;margin:16px 0 25px}h2 em{font-style:normal;color:var(--green)}.intro-grid,.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}.intro-grid>p,.lab-grid>div>p:last-child{color:#98a49a;line-height:1.85;font-size:15px}.kicker{color:var(--green);font-size:10px;font-weight:900;letter-spacing:.2em}.section-note{color:#68766b;font-size:12px;margin-top:-8px}.module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:45px}.module{min-height:190px;padding:22px;border:1px solid #213a29;background:linear-gradient(160deg,#0b120e,#060a07);position:relative;overflow:hidden}.module:before{content:"";position:absolute;inset:auto -25px -40px auto;width:100px;height:100px;border:1px solid rgba(169,255,63,.12);transform:rotate(45deg)}.module>span{font:12px ui-monospace,monospace;color:var(--green)}.module h3{font-size:13px;line-height:1.25;letter-spacing:.04em;margin:42px 0 10px}.module p{color:#748177;font-size:11px;line-height:1.5}.module:nth-child(5),.module:nth-child(6),.module:nth-child(7){grid-column:span 1}.lab{background:linear-gradient(90deg,rgba(169,255,63,.025),transparent 55%)}.terminal{background:#030604;border:1px solid #294c36;min-height:320px;padding:0;box-shadow:inset 0 0 50px rgba(97,217,47,.04)}.terminal-head{display:flex;justify-content:space-between;padding:12px 15px;border-bottom:1px solid #294c36;color:#79917d;font:10px ui-monospace,monospace}.terminal-head span:last-child{color:#425348}.terminal #terminalBody{padding:18px;font:11px/2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#86a38b}.terminal .ok{color:var(--green)}.cursor{padding:0 18px;color:var(--green);animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}.register{padding-bottom:120px}.register-card{border:1px solid #3a633e;background:linear-gradient(135deg,rgba(19,34,21,.9),rgba(5,9,6,.96));padding:40px;display:grid;grid-template-columns:1.3fr .6fr 1fr;gap:35px;align-items:center}.register-card h2{font-size:42px}.register-card p{color:#829085}.price{border-left:1px solid #315237;padding-left:30px}.price small,.price span{display:block;font-size:9px;letter-spacing:.15em;color:#819083}.price strong{display:block;color:var(--green);font-size:64px;line-height:1;margin:9px 0}.contact{display:grid;gap:15px}.contact a{color:#dce5dd;text-decoration:none;font-size:12px;overflow-wrap:anywhere}.contact a:hover{color:var(--green)}.contact span{display:block;color:var(--green);font-size:8px;letter-spacing:.18em;margin-bottom:5px}footer{border-top:1px solid rgba(169,255,63,.15);padding:25px max(22px,calc((100vw - var(--max))/2));display:flex;justify-content:space-between;color:#647168;font-size:9px;letter-spacing:.15em}
+@media(max-width:850px){.topbar nav{display:none;position:absolute;top:72px;left:0;right:0;background:#050806;border-bottom:1px solid #294c36;padding:18px 24px;flex-direction:column}.topbar nav.open{display:flex}.menu-btn{display:block}.hero{grid-template-columns:1fr;padding-top:75px}.tactical-panel{max-width:650px;width:100%;margin:auto}.intro-grid,.lab-grid{grid-template-columns:1fr;gap:25px}.module-grid{grid-template-columns:repeat(2,1fr)}.register-card{grid-template-columns:1fr}.price{border-left:0;border-top:1px solid #315237;padding:25px 0 0}.contact{border-top:1px solid #315237;padding-top:25px}footer{flex-direction:column;gap:8px}}
+@media(max-width:520px){.hero{padding:60px 20px}.section{padding:75px 20px}.hero h1{font-size:64px}.hero-meta{flex-wrap:wrap;gap:12px}.hero-actions{flex-wrap:wrap}.module-grid{grid-template-columns:1fr}.register-card{padding:25px}.register-card h2{font-size:34px}.radar{width:240px;height:240px}}
+
+
+/* ===== FINAL RESPONSIVE POLISH ===== */
+html, body { width: 100%; max-width: 100%; }
+body { min-width: 320px; }
+img, svg, video, canvas { max-width: 100%; height: auto; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.topbar { padding-left: clamp(16px, 4vw, 42px); padding-right: clamp(16px, 4vw, 42px); }
+.brand b { letter-spacing: .10em; white-space: nowrap; }
+.brand small { letter-spacing: .12em; white-space: nowrap; }
+.hero, .section { width: 100%; }
+.hero-copy, .tactical-panel, .intro-grid > *, .lab-grid > *, .register-card > * { min-width: 0; }
+.lead { text-wrap: pretty; }
+.module h3, .module p, .contact a { overflow-wrap: anywhere; word-break: break-word; }
+.btn { border-radius: 2px; }
+@media (min-width: 1100px) {
+  .hero { min-height: 760px; padding-top: 100px; padding-bottom: 100px; }
+  .module-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 850px) {
+  .topbar { height: 64px; }
+  .topbar nav { top: 64px; }
+  .hero { min-height: auto; grid-template-columns: 1fr; gap: 34px; padding: 72px 22px 64px; }
+  .hero:before { inset: 22px 8px 22px; }
+  .hero:after { right: -110px; top: 70px; opacity: .55; }
+  .hero h1 { font-size: clamp(54px, 15vw, 86px); }
+  .tagline { font-size: clamp(11px, 2.5vw, 14px); letter-spacing: .16em; }
+  .hero-actions { margin: 24px 0; }
+  .btn { flex: 1 1 170px; text-align: center; }
+  .hero-meta { gap: 10px 20px; }
+  .tactical-panel { padding: 14px; }
+  .section { padding: 76px 22px; }
+  .intro-grid, .lab-grid { gap: 32px; }
+  .module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .module { min-height: 170px; padding: 18px; }
+  .register-card { gap: 25px; padding: 30px 24px; }
+  .register-card h2 { font-size: clamp(32px, 8vw, 42px); }
+  footer { padding: 22px; }
+}
+@media (max-width: 560px) {
+  .brand-mark { width: 34px; height: 34px; font-size: 10px; }
+  .brand b { font-size: 10px; letter-spacing: .07em; }
+  .brand small { font-size: 7px; letter-spacing: .08em; }
+  .hero { padding: 60px 18px 52px; }
+  .hero h1 { font-size: clamp(48px, 17vw, 70px); }
+  .hero h1 span { font-size: .34em; margin-top: 13px; }
+  .lead { font-size: 14px; line-height: 1.7; }
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; font-size: 8px; }
+  .hero-meta span:last-child { grid-column: 1 / -1; }
+  .radar { width: min(240px, 72vw); height: min(240px, 72vw); margin-top: 28px; }
+  .section { padding: 62px 18px; }
+  h2 { font-size: clamp(34px, 10vw, 48px); }
+  .module-grid { grid-template-columns: 1fr; }
+  .module { min-height: 145px; }
+  .module h3 { margin-top: 30px; }
+  .terminal { min-height: 280px; overflow: hidden; }
+  .terminal-head { font-size: 8px; }
+  .terminal #terminalBody { font-size: 9px; line-height: 1.8; overflow-wrap: anywhere; }
+  .register-card { padding: 24px 18px; }
+  .price { padding-top: 22px; }
+  .price strong { font-size: 54px; }
+  footer { gap: 7px; font-size: 8px; line-height: 1.5; }
+}
+@media (max-width: 360px) {
+  .brand small { display: none; }
+  .hero-meta { grid-template-columns: 1fr; }
+  .hero-meta span:last-child { grid-column: auto; }
+}
+
+</style>
+</head>
+<body>
+  <noscript><div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:99;padding:12px;background:#101810;color:#a9ff3f;border:1px solid #294c36;font:12px monospace">JavaScript dinonaktifkan — konten utama tetap dapat dibaca, tetapi animasi terminal/menu mobile tidak aktif.</div></noscript>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Cyber Army Papua">
+      <span class="brand-mark">CAP</span>
+      <span><b>CYBER ARMY PAPUA</b><small>CYBER SECURITY LAB</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <nav id="nav">
+      <a href="#about">INTRO</a>
+      <a href="#materi">MATERI</a>
+      <a href="#lab">LAB</a>
+      <a href="#register">DAFTAR</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> OFFLINE // TATAP MUKA // CYBER SECURITY</div>
+        <h1>OSINT<span>OPEN SOURCE<br/>INTELLIGENCE</span></h1>
+        <p class="tagline">SEE WHAT OTHERS MISS.</p>
+        <p class="lead">Pelajari bagaimana informasi terbuka dapat dikumpulkan, dianalisis, dikorelasikan, dan diubah menjadi intelligence yang bernilai — melalui praktik langsung di lab.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#register">DAFTAR SEKARANG</a>
+          <a class="btn ghost" href="#materi">LIHAT MATERI</a>
+        </div>
+        <div class="hero-meta">
+          <span><b>100K</b> INVESTASI</span>
+          <span><b>70–80%</b> PRAKTIK</span>
+          <span><b>100%</b> LEGAL & ETIS</span>
+        </div>
+      </div>
+
+      <div class="tactical-panel">
+        <div class="panel-head"><span>OSINT • LIVE BOARD</span><i>SECURE</i></div>
+        <div class="radar"><div class="radar-sweep"></div><div class="radar-dot d1"></div><div class="radar-dot d2"></div><div class="radar-dot d3"></div></div>
+        <div class="coordinates">INTEL GRID<br/><b>LAT 02°32'S</b> &nbsp; <b>LON 140°43'E</b></div>
+        <div class="data-lines"><span>PUBLIC SOURCES ........ <b>ACTIVE</b></span><span>DATA CORRELATION ..... <b>READY</b></span><span>ANALYSIS PIPELINE ..... <b>ONLINE</b></span><span>LEGAL SCOPE ........... <b>AUTHORIZED</b></span></div>
+      </div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="section-label">01 • INTRODUCTION</div>
+      <div class="intro-grid">
+        <div>
+          <p class="kicker">OSINT × CYBER SECURITY</p>
+          <h2>Berpikir seperti analis.<br/><em>Melihat lebih jauh.</em></h2>
+        </div>
+        <p>OSINT bukan sekadar mencari informasi di internet. Kursus ini dirancang untuk melatih cara berpikir analitis dalam menemukan hubungan, pola, dan konteks dari sumber terbuka secara <strong>legal, etis, dan bertanggung jawab</strong>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="materi">
+      <div class="section-label">02 • COURSE MODULES</div>
+      <h2>Materi Kursus</h2>
+      <p class="section-note">Judul materi ditampilkan tanpa membocorkan detail latihan di dalamnya.</p>
+      <div class="module-grid">
+        <article class="module"><span>01</span><h3>INTRODUCTION TO OSINT</h3><p>Fondasi OSINT & intelligence mindset.</p></article>
+        <article class="module"><span>02</span><h3>INFORMATION GATHERING</h3><p>Pengumpulan informasi dari sumber terbuka.</p></article>
+        <article class="module"><span>03</span><h3>WEB & DIGITAL INTELLIGENCE</h3><p>Eksplorasi jejak digital di web.</p></article>
+        <article class="module"><span>04</span><h3>SOCIAL MEDIA INTELLIGENCE</h3><p>Analisis informasi dari platform sosial.</p></article>
+        <article class="module"><span>05</span><h3>IMAGE & GEOLOCATION INTELLIGENCE</h3><p>Intelijen berbasis visual & lokasi.</p></article>
+        <article class="module"><span>06</span><h3>DATA ANALYSIS & CORRELATION</h3><p>Menghubungkan data untuk menemukan pola.</p></article>
+        <article class="module"><span>07</span><h3>REPORTING & DOCUMENTATION</h3><p>Menyusun hasil menjadi laporan intelligence.</p></article>
+      </div>
+    </section>
+
+    <section class="section lab" id="lab">
+      <div class="section-label">03 • FIELD LAB</div>
+      <div class="lab-grid">
+        <div>
+          <p class="kicker">HANDS-ON TRAINING</p>
+          <h2>Bukan cuma teori.<br/><em>Langsung praktik di lab.</em></h2>
+          <p>Setiap latihan menggunakan lingkungan belajar yang terkontrol. Fokusnya adalah membangun skill Cyber Security yang dapat dipertanggungjawabkan — bukan mengeksploitasi orang atau sistem tanpa izin.</p>
+        </div>
+        <div class="terminal" aria-label="Simulasi terminal dekoratif">
+          <div class="terminal-head"><span>osint_lab@cyberarmypapua:~$</span><span>● ● ●</span></div>
+          <div id="terminalBody"></div>
+          <div class="cursor">_</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section register" id="register">
+      <div class="register-card">
+        <div>
+          <div class="section-label">04 • ENROLLMENT</div>
+          <h2>Bangun kemampuan intelligence-mu.</h2>
+          <p>Offline • Tatap muka • Praktik langsung • Legal & etis</p>
+        </div>
+        <div class="price"><small>BIAYA KURSUS</small><strong>100K</strong><span>INVESTASI KECIL, SKILL BESAR.</span></div>
+        <div class="contact">
+          <a href="mailto:cyberarmypapua@protonmail.com"><span>EMAIL</span>cyberarmypapua@protonmail.com</a>
+          <a href="https://wa.me/628133244757" target="_blank" rel="noopener"><span>WHATSAPP</span>+62 813-3244-757</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>CYBER ARMY PAPUA</span><span>OSINT • CYBER SECURITY</span><span>USE KNOWLEDGE RESPONSIBLY.</span></footer>
+  <script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const terminal=document.getElementById('terminalBody');
+const lines=[
+  ['> booting OSINT lab environment...','ok'],
+  ['> loading public-source modules...','ok'],
+  ['> validating ethical scope...','ok'],
+  ['> correlation engine ready.','ok'],
+  ['> intelligence workflow: COLLECT • ANALYZE • CORRELATE • REPORT','ok']
+];
+let i=0;
+function typeLine(){
+  if(i>=lines.length)return;
+  const p=document.createElement('div');
+  p.innerHTML=`${lines[i][0]} <span class="${lines[i][1]}">[${i===2?'AUTHORIZED':'READY'}]</span>`;
+  terminal.appendChild(p); i++; setTimeout(typeLine,420);
+}
+const observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){typeLine();observer.disconnect()}},{threshold:.25});
+observer.observe(document.querySelector('.terminal'));
+
+</script>
+</body>
+</html>
