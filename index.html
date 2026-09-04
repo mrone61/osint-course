@@ -14,13 +14,12 @@
 .topbar nav{display:flex;gap:26px}
 .topbar nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:.18em;cursor:pointer}
 .topbar nav a:hover{color:var(--green)}
-.menu-btn{display:none;background:none;color:var(--green);border:0;font-size:22px}
 
 .hero{min-height:720px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.1fr.9fr;align-items:center;gap:50px;padding:90px 28px;background:var(--bg)}
-.hero h1{font-size:clamp(64px,9vw,118px);line-height:1;margin:25px 0 18px;font-weight:400;color:#fff}
-.hero h1 span{display:block;color:var(--green);font-size:.37em;margin-top:17px}
-.tagline{letter-spacing:.22em;font-size:14px}
-.lead{max-width:660px;color:#bbb;line-height:1.75;font-size:15px}
+.hero h1{font-size:clamp(64px,9vw,118px);line-height:0.85;margin:25px 0 18px;font-weight:400;color:#fff;letter-spacing:-0.04em}
+.hero h1 span{display:block;color:var(--green);font-size:0.28em;letter-spacing:0.25em;line-height:1.2;margin-top:8px;text-align:left}
+.tagline{letter-spacing:.22em;font-size:14px;margin-top:20px}
+.lead{max-width:660px;color:#bbb;line-height:1.75;font-size:15px;margin-top:12px}
 .btn{display:inline-block;width:100%;padding:14px 18px;text-decoration:none;font-size:11px;letter-spacing:.12em;border:1px solid var(--green);background:var(--green);color:#000;cursor:pointer;text-align:center;margin-top:30px}
 
 .tactical-panel{border:1px solid var(--line);background:var(--panel);padding:18px}
@@ -46,7 +45,8 @@ overflow:hidden}
 .section{max-width:var(--max);margin:auto;padding:100px 28px;border-top:1px solid var(--line);background:var(--bg)}
 h2{font-size:clamp(35px,5vw,64px);line-height:1.1;margin:16px 0 25px;font-weight:400}
 .section-label{font-size:10px;letter-spacing:.2em;color:var(--green)}
-.module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:45px}
+.price-above{font-size:14px;color:var(--green);margin:8px 0 20px;letter-spacing:.1em}
+.module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
 .module{min-height:190px;padding:22px;border:1px solid var(--line);background:var(--panel)}
 .module span{font:12px ui-monospace,monospace;color:var(--green)}
 .module h3{font-size:13px;margin:42px 0 10px;font-weight:400}
@@ -66,9 +66,7 @@ h2{font-size:clamp(35px,5vw,64px);line-height:1.1;margin:16px 0 25px;font-weight
 footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#777;font-size:9px;letter-spacing:.15em;background:var(--bg)}
 
 @media(max-width:850px){
-.topbar nav{display:none;position:absolute;top:72px;left:0;right:0;background:#000;border-bottom:1px solid var(--line);padding:18px 24px;flex-direction:column}
-.topbar nav.open{display:flex}
-.menu-btn{display:block}
+.topbar{justify-content:center}
 .hero{grid-template-columns:1fr;padding-top:75px}
 .module-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -79,8 +77,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
 <!-- HALAMAN 1: LANDING -->
 <div id="page1" class="page active">
   <header class="topbar">
-    <button class="menu-btn" id="menuBtn">☰</button>
-    <nav id="nav">
+    <nav>
       <a onclick="showPage('page1')">HOME</a>
       <a onclick="showPage('page2')">DAFTAR</a>
     </nav>
@@ -89,7 +86,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
   <main>
     <section class="hero">
       <div>
-        <h1>OSINT<span>OPEN SOURCE<br/>INTELLIGENCE</span></h1>
+        <h1>OSINT<span>OPEN SOURCE INTELLIGENCE</span></h1>
         <p class="tagline">SEE WHAT OTHERS MISS.</p>
         <p class="lead">Pelajari bagaimana informasi terbuka dapat dikumpulkan, dianalisis, dan diubah menjadi intelligence yang bernilai — melalui praktik langsung di lab.</p>
         <a class="btn" onclick="showPage('page2')">DAFTAR SEKARANG</a>
@@ -116,6 +113,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
 
     <section class="section" id="materi">
       <div class="section-label">COURSE MODULES</div>
+      <div class="price-above">INVESTASI: 100K</div>
       <h2>Materi Kursus</h2>
       <div class="module-grid">
         <article class="module"><span>01</span><h3>INTRODUCTION TO OSINT</h3><p>Fondasi OSINT & intelligence mindset.</p></article>
@@ -128,7 +126,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
       </div>
     </section>
 
-    <footer><span>© PAPUA CYBER COMMUNITY </span></footer>
+    <footer><span>© PAPUA CYBER COMMUNITY</span></footer>
   </main>
 </div>
 
@@ -141,13 +139,13 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#77
   <div class="register-wrap">
     <div class="register-card">
       <h2>Pendaftaran Kursus</h2>
-      <p>Isi nama lengkap untuk kebutuhan sertifikat</p>
+      <p>Investasi 100K • Isi nama lengkap untuk sertifikat</p>
       <form id="daftarForm">
         <div class="form-group">
           <label>NAMA LENGKAP</label>
           <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
         </div>
-        <button type="submit" class="btn">DAFTAR VIA WHATSAPP</button>
+        <button type="submit" class="btn">DAFTAR SEKARANG</button>
         <div class="back-link" onclick="showPage('page1')">← Kembali ke halaman utama</div>
       </form>
     </div>
@@ -161,11 +159,6 @@ function showPage(pageId){
   document.getElementById(pageId).classList.add('active');
   window.scrollTo(0,0);
 }
-
-// Menu mobile
-const menuBtn=document.getElementById('menuBtn');
-const nav=document.getElementById('nav');
-if(menuBtn){menuBtn.addEventListener('click',()=>nav.classList.toggle('open'))}
 
 // Real-time Satellite Radar
 let targetCount = 0;
@@ -204,14 +197,14 @@ setInterval(()=>randomDot('dot2'), 1900);
 setInterval(()=>randomDot('dot3'), 2500);
 setInterval(updateCoords, 2000);
 
-// Form ke WhatsApp
+// Form ke WhatsApp dengan harga
 document.getElementById('daftarForm').addEventListener('submit', function(e){
   e.preventDefault();
   const nama = document.getElementById('nama').value.trim();
   const nomorWA = '628133244757'; // GANTI DENGAN NOMOR KAMU
-  const pesan = `Halo, saya ingin daftar kursus OSINT Cyber Security.%0A%0ANama: ${encodeURIComponent(nama)}`;
+  const pesan = `Halo, saya ingin daftar kursus OSINT.%0A%0ANama: ${encodeURIComponent(nama)}%0AKursus: OSINT Cyber Security%0AInvestasi: 100K`;
   window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
 });
 </script>
 </body>
-                                         </html>
+  </html>
