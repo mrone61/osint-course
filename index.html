@@ -3,117 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="OSINT — Open Source Intelligence. Kursus offline Cyber Security dengan fokus praktik langsung di lab, legal dan etis." />
-  <title>OSINT • Open Source Intelligence - Cyber Army Papua</title>
+  <title>OSINT • Open Source Intelligence</title>
   <style>
-:root{--bg:#000000;--panel:#0a0a0a;--line:#1f1f1f;--green:#8ad94f;--text:#e5e5e5;--muted:#999999;--max:1180px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-weight:400;overflow-x:hidden}
+:root{--bg:#000;--panel:#0a0a0a;--line:#1f1f1f;--green:#8ad94f;--text:#e5e5e5;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;font-weight:400;overflow-x:hidden}
 
-.topbar{position:sticky;top:0;z-index:30;height:72px;border-bottom:1px solid var(--line);background:#000;display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100vw - var(--max))/2));}
-.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none}
-.brand-mark{width:38px;height:38px;border:1px solid var(--green);display:grid;place-items:center;color:var(--green);font-size:12px}
-.brand b{display:block;font-size:12px;letter-spacing:.16em;font-weight:400}
-.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:.16em;margin-top:3px;font-weight:400}
+.topbar{position:sticky;top:0;z-index:30;height:72px;border-bottom:1px solid var(--line);background:#000;display:flex;align-items:center;justify-content:flex-end;padding:0 max(22px,calc((100vw - var(--max))/2));}
 .topbar nav{display:flex;gap:26px}
-.topbar nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:.18em;font-weight:400}
+.topbar nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:.18em}
 .topbar nav a:hover{color:var(--green)}
 .menu-btn{display:none;background:none;color:var(--green);border:0;font-size:22px}
 
-.hero{min-height:720px;max-width:var(--max);margin:auto;position:relative;display:grid;grid-template-columns:1.1fr.9fr;align-items:center;gap:50px;padding:90px 28px;background:var(--bg)}
-.hero-copy,.tactical-panel{position:relative;z-index:2}
-.eyebrow,.section-label{font-size:10px;letter-spacing:.2em;color:var(--green);font-weight:400}
-.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:7px}
-.hero h1{font-size:clamp(64px,9vw,118px);line-height:1;margin:25px 0 18px;letter-spacing:-.04em;font-weight:400;color:#fff}
-.hero h1 span{display:block;color:var(--green);font-size:.37em;letter-spacing:.02em;line-height:1.2;margin-top:17px;font-weight:400}
-.tagline{letter-spacing:.22em;font-size:14px;font-weight:400}
-.lead{max-width:660px;color:#bbb;line-height:1.75;font-size:15px;font-weight:400}
-.hero-actions{display:flex;gap:12px;margin:30px 0}
-.btn{display:inline-block;padding:14px 18px;text-decoration:none;font-size:11px;letter-spacing:.12em;border:1px solid var(--green);font-weight:400}
-.primary{background:var(--green);color:#000}
-.ghost{color:var(--green);background:transparent}
-.hero-meta{display:flex;gap:26px;color:#888;font-size:9px;letter-spacing:.12em;font-weight:400}
-.hero-meta b{color:#ccc;font-weight:400}
+.hero{min-height:720px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.1fr.9fr;align-items:center;gap:50px;padding:90px 28px;background:var(--bg)}
+.hero h1{font-size:clamp(64px,9vw,118px);line-height:1;margin:25px 0 18px;font-weight:400;color:#fff}
+.hero h1 span{display:block;color:var(--green);font-size:.37em;margin-top:17px}
+.tagline{letter-spacing:.22em;font-size:14px}
+.lead{max-width:660px;color:#bbb;line-height:1.75;font-size:15px}
+.btn{display:inline-block;width:100%;padding:14px 18px;text-decoration:none;font-size:11px;letter-spacing:.12em;border:1px solid var(--green);background:var(--green);color:#000;cursor:pointer;text-align:center;margin-top:30px}
 
 .tactical-panel{border:1px solid var(--line);background:var(--panel);padding:18px}
-.panel-head{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#aaa;border-bottom:1px solid var(--line);padding-bottom:12px;font-weight:400}
-.panel-head i{color:var(--green);font-style:normal;font-weight:400}
-.radar{width:290px;height:290px;max-width:80vw;margin:35px auto 18px;border:1px solid #333;border-radius:50%;position:relative;background:var(--bg)}
-.radar-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--green)}
-.d1{left:62%;top:32%}.d2{left:32%;top:62%}.d3{left:70%;top:70%}
-.coordinates{text-align:center;color:#777;font-size:9px;letter-spacing:.16em;line-height:1.8;font-weight:400}
-.coordinates b{color:#aaa;font-weight:400}
-.data-lines{margin-top:20px;border-top:1px solid var(--line);padding-top:15px;display:grid;gap:10px;font:9px/1.4 ui-monospace,monospace;color:#777;font-weight:400}
-.data-lines b{color:var(--green);font-weight:400}
+.panel-head{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#aaa;border-bottom:1px solid var(--line);padding-bottom:12px}
+.panel-head i{color:var(--green);font-style:normal}
+
+.radar{width:290px;height:290px;max-width:80vw;margin:25px auto;border:1px solid #2a2a2a;border-radius:50%;position:relative;background:
+radial-gradient(circle,transparent 0 24%,rgba(138,217,79,.05) 25% 26%,transparent 27% 49%,rgba(138,217,79,.05) 50% 51%,transparent 52% 74%,rgba(138,217,79,.05) 75% 76%,transparent 77%),
+linear-gradient(90deg,transparent 49.5%,rgba(138,217,79,.1) 50%,transparent 50.5%),
+linear-gradient(0deg,transparent 49.5%,rgba(138,217,79,.1) 50%,transparent 50.5%);
+overflow:hidden}
+.radar-sweep{position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0 340deg,rgba(138,217,79,.25) 350deg,transparent 360deg);animation:spin 3s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radar-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);opacity:0;transition:opacity .3s}
+.radar-pulse{position:absolute;inset:50%;border:1px solid var(--green);border-radius:50%;transform:translate(-50%,-50%);animation:pulse 2s infinite}
+@keyframes pulse{0%{width:0;height:0;opacity:1}100%{width:100%;height:100%;opacity:0}}
+
+.coordinates{text-align:center;color:#777;font-size:9px;letter-spacing:.16em;line-height:1.8}
+.coordinates b{color:#aaa}
+.data-lines{margin-top:20px;border-top:1px solid var(--line);padding-top:15px;display:grid;gap:8px;font:9px/1.4 ui-monospace,monospace;color:#777}
+.status-ok{color:var(--green)}
 
 .section{max-width:var(--max);margin:auto;padding:100px 28px;border-top:1px solid var(--line);background:var(--bg)}
-h2{font-size:clamp(35px,5vw,64px);line-height:1.1;letter-spacing:-.02em;margin:16px 0 25px;font-weight:400}
-h2 em{font-style:normal;color:var(--green);font-weight:400}
-.intro-grid,.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.intro-grid>p,.lab-grid>div>p:last-child{color:#bbb;line-height:1.85;font-size:15px;font-weight:400}
-.kicker{color:var(--green);font-size:10px;letter-spacing:.2em;font-weight:400}
-.section-note{color:#888;font-size:12px;margin-top:-8px;font-weight:400}
-
+h2{font-size:clamp(35px,5vw,64px);line-height:1.1;margin:16px 0 25px;font-weight:400}
+.section-label{font-size:10px;letter-spacing:.2em;color:var(--green)}
 .module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:45px}
 .module{min-height:190px;padding:22px;border:1px solid var(--line);background:var(--panel)}
-.module>span{font:12px ui-monospace,monospace;color:var(--green);font-weight:400}
-.module h3{font-size:13px;line-height:1.25;letter-spacing:.04em;margin:42px 0 10px;font-weight:400}
-.module p{color:#999;font-size:11px;line-height:1.5;font-weight:400}
+.module span{font:12px ui-monospace,monospace;color:var(--green)}
+.module h3{font-size:13px;margin:42px 0 10px;font-weight:400}
+.module p{color:#999;font-size:11px}
 
-.lab{background:var(--bg)}
-.terminal{background:#050505;border:1px solid var(--line);min-height:320px;padding:0}
-.terminal-head{display:flex;justify-content:space-between;padding:12px 15px;border-bottom:1px solid var(--line);color:#888;font:10px ui-monospace,monospace;font-weight:400}
-.terminal-head span:last-child{color:#555}
-.terminal #terminalBody{padding:18px;font:11px/2 ui-monospace,monospace;color:#aaa;font-weight:400}
-.terminal.ok{color:var(--green)}
-.cursor{padding:0 18px;color:var(--green);animation:blink 1s steps(2) infinite}
-@keyframes blink{50%{opacity:0}}
+.register{padding-bottom:120px}
+.register-card{border:1px solid var(--line);background:var(--panel);padding:40px;max-width:600px;margin:auto}
+.register-card h2{text-align:center;margin-bottom:10px;font-weight:400}
+.register-card p{color:#999;text-align:center;margin-bottom:30px}
+.form-group{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.form-group label{font-size:10px;letter-spacing:.15em;color:#888}
+.form-group input{padding:14px 16px;background:#050505;border:1px solid var(--line);color:var(--text);font-size:14px}
+.form-group input:focus{outline:none;border-color:var(--green)}
 
-.register{padding-bottom:120px;background:var(--bg)}
-.register-card{border:1px solid var(--line);background:var(--panel);padding:40px;display:grid;grid-template-columns:1.3fr.6fr 1fr;gap:35px;align-items:center}
-.register-card h2{font-size:42px;font-weight:400}
-.register-card p{color:#999;font-weight:400}
-.price{border-left:1px solid var(--line);padding-left:30px}
-.price small,.price span{display:block;font-size:9px;letter-spacing:.15em;color:#888;font-weight:400}
-.price strong{display:block;color:var(--green);font-size:64px;line-height:1;margin:9px 0;font-weight:400}
-.contact{display:grid;gap:15px}
-.contact a{color:#ccc;text-decoration:none;font-size:12px;overflow-wrap:anywhere;font-weight:400}
-.contact a:hover{color:var(--green)}
-.contact span{display:block;color:var(--green);font-size:8px;letter-spacing:.18em;margin-bottom:5px;font-weight:400}
-
-footer{border-top:1px solid var(--line);padding:25px max(22px,calc((100vw - var(--max))/2));display:flex;justify-content:space-between;color:#777;font-size:9px;letter-spacing:.15em;background:var(--bg);font-weight:400}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#777;font-size:9px;letter-spacing:.15em;background:var(--bg)}
 
 @media(max-width:850px){
 .topbar nav{display:none;position:absolute;top:72px;left:0;right:0;background:#000;border-bottom:1px solid var(--line);padding:18px 24px;flex-direction:column}
 .topbar nav.open{display:flex}
 .menu-btn{display:block}
 .hero{grid-template-columns:1fr;padding-top:75px}
-.tactical-panel{max-width:650px;width:100%;margin:auto}
-.intro-grid,.lab-grid{grid-template-columns:1fr;gap:25px}
 .module-grid{grid-template-columns:repeat(2,1fr)}
-.register-card{grid-template-columns:1fr}
-.price{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}
-.contact{border-top:1px solid var(--line);padding-top:25px}
-footer{flex-direction:column;gap:8px}
-}
-@media(max-width:520px){
-.hero{padding:60px 20px}
-.section{padding:75px 20px}
-.hero h1{font-size:64px}
-.hero-meta{flex-wrap:wrap;gap:12px}
-.hero-actions{flex-wrap:wrap;flex-direction:column}
-.btn{width:100%;text-align:center}
-.module-grid{grid-template-columns:1fr}
-.register-card{padding:25px}
-.register-card h2{font-size:34px}
-.radar{width:240px;height:240px}
 }
 </style>
 </head>
 <body>
-  <noscript><div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:99;padding:12px;background:#0a0a0a;color:#8ad94f;border:1px solid #1f1f1f;font:12px monospace;font-weight:400">JavaScript dinonaktifkan — konten utama tetap dapat dibaca.</div></noscript>
 
   <header class="topbar">
-    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <button class="menu-btn" id="menuBtn">☰</button>
     <nav id="nav">
       <a href="#about">INTRO</a>
       <a href="#materi">MATERI</a>
@@ -122,47 +82,37 @@ footer{flex-direction:column;gap:8px}
     </nav>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse"></span> OFFLINE // TATAP MUKA // CYBER SECURITY</div>
+      <div>
         <h1>OSINT<span>OPEN SOURCE<br/>INTELLIGENCE</span></h1>
         <p class="tagline">SEE WHAT OTHERS MISS.</p>
-        <p class="lead">Pelajari bagaimana informasi terbuka dapat dikumpulkan, dianalisis, dikorelasikan, dan diubah menjadi intelligence yang bernilai — melalui praktik langsung di lab.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#register">DAFTAR SEKARANG</a>
-          <a class="btn ghost" href="#materi">LIHAT MATERI</a>
-        </div>
-        <div class="hero-meta">
-          <span><b>100K</b> INVESTASI</span>
-          <span><b>70–80%</b> PRAKTIK</span>
-          <span><b>100%</b> LEGAL & ETIS</span>
-        </div>
+        <p class="lead">Pelajari bagaimana informasi terbuka dapat dikumpulkan, dianalisis, dan diubah menjadi intelligence yang bernilai — melalui praktik langsung di lab.</p>
+        <a class="btn" href="#register">DAFTAR SEKARANG</a>
       </div>
 
       <div class="tactical-panel">
-        <div class="panel-head"><span>OSINT • LIVE BOARD</span><i>SECURE</i></div>
-        <div class="radar"><div class="radar-dot d1"></div><div class="radar-dot d2"></div><div class="radar-dot d3"></div></div>
-        <div class="coordinates">INTEL GRID<br/><b>LAT 02°32'S</b> &nbsp; <b>LON 140°43'E</b></div>
-        <div class="data-lines"><span>PUBLIC SOURCES........ <b>ACTIVE</b></span><span>DATA CORRELATION..... <b>READY</b></span><span>ANALYSIS PIPELINE..... <b>ONLINE</b></span><span>LEGAL SCOPE........... <b>AUTHORIZED</b></span></div>
-      </div>
-    </section>
-
-    <section class="section intro" id="about">
-      <div class="section-label">01 • INTRODUCTION</div>
-      <div class="intro-grid">
-        <div>
-          <p class="kicker">OSINT × CYBER SECURITY</p>
-          <h2>Berpikir seperti analis.<br/><em>Melihat lebih jauh.</em></h2>
+        <div class="panel-head"><span>SATELLITE OSINT SCAN</span><i id="satStatus">ONLINE</i></div>
+        <div class="radar">
+          <div class="radar-sweep"></div>
+          <div class="radar-pulse"></div>
+          <div class="radar-dot" id="dot1"></div>
+          <div class="radar-dot" id="dot2"></div>
+          <div class="radar-dot" id="dot3"></div>
         </div>
-        <p>OSINT bukan sekadar mencari informasi di internet. Kursus ini dirancang untuk melatih cara berpikir analitis dalam menemukan hubungan, pola, dan konteks dari sumber terbuka secara <span>legal, etis, dan bertanggung jawab</span>.</p>
+        <div class="coordinates">TARGET LOCK<br/><b id="lat">LAT 02°32'14"S</b> &nbsp; <b id="lon">LON 140°43'08"E</b></div>
+        <div class="data-lines">
+          <span>SATELLITE LINK ....... <span class="status-ok" id="linkStatus">ACTIVE</span></span>
+          <span>SCAN RATE ............ <span class="status-ok" id="scanRate">0.0 GHz</span></span>
+          <span>TARGETS FOUND ........ <span class="status-ok" id="targetCount">0</span></span>
+          <span>LEGAL SCOPE .......... <span class="status-ok">AUTHORIZED</span></span>
+        </div>
       </div>
     </section>
 
     <section class="section" id="materi">
       <div class="section-label">02 • COURSE MODULES</div>
       <h2>Materi Kursus</h2>
-      <p class="section-note">Judul materi ditampilkan tanpa membocorkan detail latihan di dalamnya.</p>
       <div class="module-grid">
         <article class="module"><span>01</span><h3>INTRODUCTION TO OSINT</h3><p>Fondasi OSINT & intelligence mindset.</p></article>
         <article class="module"><span>02</span><h3>INFORMATION GATHERING</h3><p>Pengumpulan informasi dari sumber terbuka.</p></article>
@@ -174,63 +124,75 @@ footer{flex-direction:column;gap:8px}
       </div>
     </section>
 
-    <section class="section lab" id="lab">
-      <div class="section-label">03 • FIELD LAB</div>
-      <div class="lab-grid">
-        <div>
-          <p class="kicker">HANDS-ON TRAINING</p>
-          <h2>Bukan cuma teori.<br/><em>Langsung praktik di lab.</em></h2>
-          <p>Setiap latihan menggunakan lingkungan belajar yang terkontrol. Fokusnya adalah membangun skill Cyber Security yang dapat dipertanggungjawabkan — bukan mengeksploitasi orang atau sistem tanpa izin.</p>
-        </div>
-        <div class="terminal" aria-label="Simulasi terminal dekoratif">
-          <div class="terminal-head"><span>osint_lab@cyberarmypapua:~$</span><span>● ●</span></div>
-          <div id="terminalBody"></div>
-          <div class="cursor">_</div>
-        </div>
-      </div>
-    </section>
-
     <section class="section register" id="register">
       <div class="register-card">
-        <div>
-          <div class="section-label">04 • ENROLLMENT</div>
-          <h2>Bangun kemampuan intelligence-mu.</h2>
-          <p>Offline • Tatap muka • Praktik langsung • Legal & etis</p>
-        </div>
-        <div class="price"><small>BIAYA KURSUS</small><strong>100K</strong><span>INVESTASI KECIL, SKILL BESAR.</span></div>
-        <div class="contact">
-          <a href="mailto:cyberarmypapua@protonmail.com"><span>EMAIL</span>cyberarmypapua@protonmail.com</a>
-          <a href="https://wa.me/628133244757" target="_blank" rel="noopener"><span>WHATSAPP</span>+62 813-3244-757</a>
-        </div>
+        <h2>Pendaftaran Kursus</h2>
+        <p>Isi nama lengkap untuk kebutuhan sertifikat</p>
+        <form id="daftarForm">
+          <div class="form-group">
+            <label>NAMA LENGKAP</label>
+            <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
+          </div>
+          <button type="submit" class="btn">DAFTAR VIA WHATSAPP</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer><span>CYBER ARMY PAPUA</span><span>OSINT • CYBER SECURITY</span><span>USE KNOWLEDGE RESPONSIBLY.</span></footer>
+  <footer><span>© 2026 OSINT COURSE</span></footer>
 
 <script>
+// Menu mobile
 const menuBtn=document.getElementById('menuBtn');
 const nav=document.getElementById('nav');
 menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-const terminal=document.getElementById('terminalBody');
-const lines=[
-  ['> booting OSINT lab environment...','ok'],
-  ['> loading public-source modules...','ok'],
-  ['> validating ethical scope...','ok'],
-  ['> correlation engine ready.','ok'],
-  ['> intelligence workflow: COLLECT • ANALYZE • CORRELATE • REPORT','ok']
-];
-let i=0;
-function typeLine(){
-  if(i>=lines.length)return;
-  const p=document.createElement('div');
-  p.innerHTML=`${lines[i][0]} <span class="${lines[i][1]}">[${i===2?'AUTHORIZED':'READY'}]</span>`;
-  terminal.appendChild(p); i++; setTimeout(typeLine,420);
+// Real-time Satellite Radar Effect
+let targetCount = 0;
+function randomDot(id){
+  const dot = document.getElementById(id);
+  const angle = Math.random() * 360;
+  const radius = 30 + Math.random() * 40; // %
+  const x = 50 + radius * Math.cos(angle * Math.PI / 180);
+  const y = 50 + radius * Math.sin(angle * Math.PI / 180);
+  dot.style.left = x + '%';
+  dot.style.top = y + '%';
+  dot.style.opacity = '1';
+  targetCount++;
+  document.getElementById('targetCount').textContent = targetCount;
+  setTimeout(()=>{dot.style.opacity='0'}, 2000);
 }
-const observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){typeLine();observer.disconnect()}},{threshold:.25});
-observer.observe(document.querySelector('.terminal'));
+
+// Update koordinat tiap 2 detik biar "real time"
+function updateCoords(){
+  const latDeg = (2 + Math.random()).toFixed(0);
+  const latMin = (30 + Math.random()*5).toFixed(0);
+  const latSec = (10 + Math.random()*20).toFixed(0);
+  const lonDeg = (140 + Math.random()).toFixed(0);
+  const lonMin = (40 + Math.random()*5).toFixed(0);
+  const lonSec = (5 + Math.random()*20).toFixed(0);
+  document.getElementById('lat').textContent = `LAT ${latDeg}°${latMin}'${latSec}"S`;
+  document.getElementById('lon').textContent = `LON ${lonDeg}°${lonMin}'${lonSec}"E`;
+  
+  const ghz = (2.4 + Math.random()*0.6).toFixed(1);
+  document.getElementById('scanRate').textContent = `${ghz} GHz`;
+}
+
+// Jalankan setiap detik
+setInterval(()=>randomDot('dot1'), 1200);
+setInterval(()=>randomDot('dot2'), 1900);
+setInterval(()=>randomDot('dot3'), 2500);
+setInterval(updateCoords, 2000);
+
+// Form ke WhatsApp
+document.getElementById('daftarForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nama = document.getElementById('nama').value.trim();
+  const nomorWA = '628133244757'; // GANTI DENGAN NOMOR KAMU
+  const pesan = `Halo, saya ingin daftar kursus OSINT Cyber Security.%0A%0ANama: ${encodeURIComponent(nama)}`;
+  window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+});
 </script>
 </body>
-</html>
+                                         </html>
